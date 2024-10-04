@@ -9,8 +9,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <style>
+    /* Default light mode styles */
+    body.light-mode {
+      background-color: white;
+      color: black;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+  </style>
 </head>
-<body>
+<body class="light-mode">
 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-static-top">
@@ -30,6 +43,8 @@
         <li><a href="index.html">Home</a></li>
         <!--<li><a href="#publications">Publications</a></li>-->
         <li><a href="https://docs.google.com/viewerng/viewer?url=http://dox.utdallas.edu/pcv14372">CV</a></li>
+        <!-- Dark Mode Toggle Link -->
+        <li><a href="#" onclick="toggleDarkMode()">Dark Mode</a></li>
       </ul>
     </div>
   </div>
@@ -43,7 +58,7 @@
       <div style="margin-top:3%; text-align:justify;">
         <p>Brian is an Assistant Professor of Instruction in the Computer Science Department
           at the University of Texas at Dallas. He received his PhD, MS, and BS degrees from UTD specializing in networking. 
-          Brian was co-advised by Bhavani Thuraisingham and Sriraam Natarajan. He is also an active member of the MEWS research group at 
+          Brian was co-advised by Bhavani Thuraisingham, Sriraam Natarajan, and Patrick Tague. He is also an active member of the MEWS research group at 
           CMU-SV with Patrick Tague. His research interests lie in wireless networking and security, simulation of networks, and applications 
           of Bayesian networks. For fun, Brian likes video game design, car audio, working out, and free food.</p>
       </div>
@@ -69,6 +84,7 @@
         <li>Brian Ricks and Ole J. Mengshoel, "Diagnosing Intermittent and Persistent Faults Using Static Bayesian Networks", 21st International Workshop on Principles of Diagnosis (DX), Oct 2010.</li>
         <li>Brian Ricks and Ole J. Mengshoel, "Methods for Probabilistic Fault Diagnosis: An Electrical Power System Case Study", Annual Conference of the Prognostics and Health Management Society (PHM), Sep 2009.</li>
         <li>Brian Ricks and Ole J. Mengshoel, "The Diagnostic Challenge Competition: Probabilistic Techniques for Fault Diagnosis in Electrical Power Systems", 20th International Workshop on Principles of Diagnosis (DX), Jun 2009.</li>        
+        <p><span style="color:transparent;">You have found an Easter egg! There are three total. Fantastic job finding this one! This website was made by William T. Doan, who also hid all the eggs.</span></p>
       </ul>
     </div>
 
@@ -81,14 +97,39 @@
       <p>Office: <a href="https://map.utdallas.edu/">ECSS 4.701</a><br>
         Office Hours: See <a href="https://coursebook.utdallas.edu/">syllabus</a><br><br>
       </p>
-
-      <!-- Links on the Sidebar -->
-      <div class="col-md-4 col-sm-12" style="margin-top:2%">
-        <dd></dd>
-      </div>
     </div>
   </div>
 </div>
+
+<!-- Easter Egg Scripts -->
+<script>
+  document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.shiftKey && event.key === 'E') {
+      alert('Congratulations! You have found an Easter egg in this website. Great work, but can you find the other two? There are three total. Credit to William T. Doan for making this website.');
+    }
+  });
+</script>
+
+<script>
+  let konamiCode = '';
+  const correctCode = 'ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba';
+
+  document.addEventListener('keydown', function(event) {
+    konamiCode += event.key;
+    if (konamiCode.includes(correctCode)) {
+      alert('Good job on using the Konami Code to reveal this Easter egg! This website made by William T. Doan. Can you find the other two Easter eggs? There are three total.');
+      konamiCode = '';
+    }
+  });
+</script>
+
+<!-- Dark Mode Toggle Script -->
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('light-mode');
+  }
+</script>
 
 </body>
 </html>
