@@ -123,6 +123,23 @@
   });
 </script>
 
+<script>
+let williamSequence = '';
+const williamCode = 'WILLIAM';
+
+document.addEventListener('keydown', function(event) {
+  if (event.shiftKey) {
+    williamSequence += event.key.toUpperCase();
+    if (williamSequence === williamCode) {
+      alert('Terrific work! You deduced the creator of this website would use his own name as an Easter egg! His name is William T. Doan!');
+      williamSequence = ''; 
+    } else if (!williamCode.startsWith(williamSequence)) {
+      williamSequence = ''; 
+    }
+  }
+});
+</script>
+
 <!-- Dark Mode Toggle Script -->
 <script>
   function toggleDarkMode() {
