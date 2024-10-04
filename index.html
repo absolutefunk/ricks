@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <title>Brian Ricks</title>
@@ -15,12 +14,58 @@
       background-color: white;
       color: black;
     }
-
+  
     /* Dark mode styles */
     body.dark-mode {
       background-color: #121212;
       color: #ffffff;
     }
+  
+    .img-fluid {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .bio-heading {
+      font-family: 'Oswald', sans-serif;
+      font-size: 32px;
+      font-weight: bold;
+    }
+  
+    /* Profile card style for image in light mode */
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background-color: #e8e4e4; /* Light background */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 25px;
+      text-align: center;
+    }
+  
+    /* Profile card style in dark mode */
+    body.dark-mode .profile-card {
+      background-color: #1e1e1e; /* Darker background for dark mode */
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    }
+  
+    .profile-card img {
+      border-radius: 50%; /* Circular image */
+      width: 150px;
+      height: 150px;
+      object-fit: cover; /* Ensures image fits within the circle */
+    }
+  
+    /* Vertically center the content */
+    .image-container {
+      display: flex;
+      justify-content: center;
+      height: 100%;
+    }
+  
   </style>
 </head>
 <body class="light-mode">
@@ -41,7 +86,6 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="index.html">Home</a></li>
-        <!--<li><a href="#publications">Publications</a></li>-->
         <li><a href="https://docs.google.com/viewerng/viewer?url=http://dox.utdallas.edu/pcv14372">CV</a></li>
         <!-- Dark Mode Toggle Link -->
         <li><a href="#" id="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</a></li>
@@ -53,15 +97,39 @@
 <!-- Page Content -->
 <div class="container">
   <div class="row">
-    <!-- Main content column -->
-    <div class="col-md-8 col-sm-12">
-      <div style="margin-top:3%; text-align:justify;">
-        <p>Brian is an Assistant Professor of Instruction in the Computer Science Department
-          at the University of Texas at Dallas. He received his PhD, MS, and BS degrees from UTD specializing in networking. 
-          Brian was co-advised by Bhavani Thuraisingham, Sriraam Natarajan, and Patrick Tague. He is also an active member of the MEWS research group at 
-          CMU-SV with Patrick Tague. His research interests lie in wireless networking and security, simulation of networks, and applications 
-          of Bayesian networks. For fun, Brian likes video game design, car audio, working out, and free food.</p>
+    <!-- Profile Card with Image -->
+    <div class="col-xs-12 col-sm-4 col-md-3 image-container">
+      <div class="profile-card">
+        <img class="img-fluid img-responsive" src="dp-faculty-2-medium.jpg" alt="Brian Ricks">
+        <p><br>"Freshman year is a critical time to motivate students, particularly when igniting that spark of interest. My goal is to help students learn new material as they begin that climb to the summit."</p>
       </div>
+    </div>
+
+    <!-- Bio Section -->
+    <div class="col-xs-12 col-sm-8 col-md-9">
+      <h1 class="bio-heading">Brian Ricks</h1>
+      <h4>Assistant Professor of Instruction at the University of Texas at Dallas</h4>
+      <p><b>absolutefunk at utdallas dot edu</b><br>
+      <p>Office: <a href="https://map.utdallas.edu/">ECSS 4.701</a><br>
+          Office Hours: See <a href="https://coursebook.utdallas.edu/">syllabus</a><br><br>
+      <p>Brian Ricks is an Assistant Professor of Instruction in the Computer 
+        Science Department at the University of Texas at Dallas (UTD). 
+        He holds a PhD, MS, and BS from UTD, specializing in wireless 
+        networking, network security, and Bayesian networks. His academic 
+        journey was shaped by the guidance of leading experts Bhavani Thuraisingham, 
+        Sriraam Natarajan, and Patrick Tague, who all co-advised his doctoral work.<br><br>
+
+        In addition to his instructional duties, Brian is a member 
+        of the MEWS research group at Carnegie Mellon University: Silicon Valley 
+        (CMU-SV), where he focuses on the simulation of networks and security solutions. <br><br>
+        
+        Brian is deeply passionate about education, but when he is not busy teaching, 
+        Brian enjoys video game design, working on 
+        car audio systems, staying active with regular workouts, and mentoring students. 
+        He is also well known for his enthusiasm for free food!</p>
+    </div>
+  </div>
+</nav>
 
       <h2 id="publications">Publications</h2>
       <h5> For a consistently updated list, check out Brian's 
@@ -88,16 +156,6 @@
       </ul>
     </div>
 
-    <!-- Sidebar with Contact Info and Links -->
-    <div class="col-md-4 col-sm-12">
-      <img class="img-fluid img-responsive" src="dp-faculty-2-medium.jpg" alt="Brian Ricks" style="max-width: 80%; height: auto;">
-      <br><br>
-      <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>Brian Ricks</b></div>
-      <p><b>absolutefunk at utdallas dot edu</b><br>
-      <p>Office: <a href="https://map.utdallas.edu/">ECSS 4.701</a><br>
-        Office Hours: See <a href="https://coursebook.utdallas.edu/">syllabus</a><br><br>
-      </p>
-    </div>
   </div>
 </div>
 
